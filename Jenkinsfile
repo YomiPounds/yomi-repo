@@ -26,5 +26,10 @@ pipeline{
                 echo "nice one"
             }
         }
+        stage('closing-stage'){
+            steps{
+                echo "I made it laslas"
+            }
+        }
     }
 }
