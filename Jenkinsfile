@@ -1,5 +1,5 @@
 pipeline{
-    agent any {
+    agent any
         stages{
             stage('cloning-from-jui'){
                 steps{
@@ -26,5 +26,5 @@ pipeline{
                 }
             }
         }
-    }
+    
 }
