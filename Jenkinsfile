@@ -45,5 +45,12 @@ pipeline{
                 echo "I made it laslas"
             }
         }
+        stage('another-agent-stage'){
+            agent{
+                label{
+                    label'slave2'
+                }
+            }
+        }
     }
 }
