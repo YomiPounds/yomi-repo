@@ -1,5 +1,9 @@
 pipeline{
-    agent any 
+    agent {
+        label{
+            label'slave1'
+        }
+    }
     stages{
         stage('clone-stage'){
             steps{
@@ -15,6 +19,11 @@ pipeline{
                     }
                 }
                 stage('sub-para2'){
+                    agent{
+                        label{
+                            label'slave2'
+                        }
+                    }
                     steps{
                         sh 'pwd'
                     }
@@ -22,13 +31,25 @@ pipeline{
             }
         }
         stage('main-stage2'){
+            agent{
+                label{
+                    label'slave1'
+                }
+            }
             steps{
                 echo "nice one"
             }
         }
         stage('closing-stage'){
             steps{
-                echo "I made it laslas"
+                echo "I made it laslasssss"
+            }
+        }
+        stage('another-agent-stage'){
+            agent{
+                label{
+                    label'slave2'
+                }
             }
         }
     }
