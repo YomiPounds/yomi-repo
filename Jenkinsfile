@@ -12,11 +12,6 @@ pipeline{
             }
         }
         stage('parallel-stage'){
-            agent{
-                label{
-                    label'slave2'
-                }
-            }
             parallel{
                 stage('sub-para-stage'){
                     steps{
