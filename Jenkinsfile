@@ -1,5 +1,9 @@
 pipeline{
-    agent any 
+    agent {
+        label{
+            label'slave1'
+        }
+    }
     stages{
         stage('clone-stage'){
             steps{
@@ -8,6 +12,9 @@ pipeline{
             }
         }
         stage('parallel-stage'){
+            label{
+                label'slave2'
+            }
             parallel{
                 stage('sub-para-stage'){
                     steps{
@@ -22,6 +29,9 @@ pipeline{
             }
         }
         stage('main-stage2'){
+            label{
+                label'slave2'
+            }
             steps{
                 echo "nice one"
             }
