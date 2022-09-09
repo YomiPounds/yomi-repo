@@ -12,8 +12,10 @@ pipeline{
             }
         }
         stage('parallel-stage'){
-            label{
-                label'slave2'
+            agent{
+                label{
+                    label'slave2'
+                }
             }
             parallel{
                 stage('sub-para-stage'){
@@ -22,6 +24,11 @@ pipeline{
                     }
                 }
                 stage('sub-para2'){
+                    agent{
+                        label{
+                            label'slave2'
+                        }
+                    }
                     steps{
                         sh 'pwd'
                     }
@@ -29,8 +36,10 @@ pipeline{
             }
         }
         stage('main-stage2'){
-            label{
-                label'slave2'
+            agent{
+                label{
+                    label'slave1'
+                }
             }
             steps{
                 echo "nice one"
