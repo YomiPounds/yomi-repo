@@ -42,7 +42,7 @@ pipeline{
         }
         stage('closing-stage'){
             steps{
-                echo "I made it laslas"
+                echo "I made it laslasssss"
             }
         }
         stage('another-agent-stages'){
