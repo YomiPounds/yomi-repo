@@ -7,7 +7,7 @@ pipeline{
     stages{
         stage('clone-stage'){
             steps{
-                checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'jenkinsgit', url: 'https://github.com/YomiPounds/mulitfix.git']]])
+                checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'git-yomipounds', url: 'https://github.com/YomiPounds/yomi-repo.git']]])
 
             }
         }
