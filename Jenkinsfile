@@ -51,6 +51,9 @@ pipeline{
                     label'slave2'
                 }
             }
+            steps{
+                 echo "try this"
+            }  
         }
     }
 }
