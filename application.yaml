@@ -6,9 +6,9 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://gitlab.com/nanuchi/argocd-app-config.git
+    repoURL: https://github.com/YomiPounds/yomi-repo.git
     targetRevision: HEAD
-    path: dev
+    path: yom
   destination: 
     server: https://kubernetes.default.svc
     namespace: myapp
